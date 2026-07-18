@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindCare | Mental Health Awareness</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(135deg,#1e3a8a,#2563eb,#0f766e);
+color:white;
+overflow-x:hidden;
+}
+
+/* Navbar */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+z-index:999;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#A7F3D0;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:#A7F3D0;
+}
+
+/* Hero */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:120px 8%;
+gap:50px;
+}
+
+.left{
+flex:1;
+animation:fadeLeft 1s ease;
+}
+
+.left h1{
+font-size:58px;
+margin-bottom:20px;
+line-height:1.2;
+}
+
+.left span{
+color:#A7F3D0;
+}
+
+.left p{
+font-size:18px;
+opacity:.9;
+margin-bottom:35px;
+}
+
+.btn{
+padding:15px 35px;
+background:#A7F3D0;
+border:none;
+border-radius:40px;
+font-size:18px;
+cursor:pointer;
+font-weight:600;
+transition:.4s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:0 15px 30px rgba(167,243,208,.4);
+}
+
+.right{
+flex:1;
+display:flex;
+justify-content:center;
+font-size:220px;
+animation:float 5s infinite;
+}
+
+/* Sections */
+
+section{
+padding:100px 8%;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+margin-bottom:60px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:rgba(255,255,255,.15);
+}
+
+.card h3{
+margin:15px 0;
+}
+
+/* Mood */
+
+.mood-box{
+max-width:700px;
+margin:auto;
+padding:40px;
+background:rgba(255,255,255,.08);
+border-radius:20px;
+backdrop-filter:blur(15px);
+text-align:center;
+}
+
+.moods{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.moods button{
+font-size:35px;
+padding:15px;
+border:none;
+border-radius:50%;
+cursor:pointer;
+transition:.3s;
+}
+
+.moods button:hover{
+transform:scale(1.15);
+}
+
+.result{
+margin-top:25px;
+font-size:20px;
+font-weight:600;
+}
+
+/* Chat */
+
+.chat{
+max-width:700px;
+margin:auto;
+background:rgba(255,255,255,.08);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(15px);
+}
+
+.messages{
+height:250px;
+overflow-y:auto;
+margin-bottom:20px;
+padding:10px;
+}
+
+.bot,.user{
+padding:12px 18px;
+border-radius:15px;
+margin:10px 0;
+max-width:80%;
+}
+
+.bot{
+background:#10b981;
+}
+
+.user{
+background:#2563eb;
+margin-left:auto;
+}
+
+.chatinput{
+display:flex;
+gap:10px;
+}
+
+.chatinput input{
+flex:1;
+padding:15px;
+border:none;
+border-radius:10px;
+font-size:16px;
+}
+
+.chatinput button{
+padding:15px 25px;
+border:none;
+background:#A7F3D0;
+border-radius:10px;
+cursor:pointer;
+font-weight:600;
+}
+
+/* Emergency */
+
+.emergency{
+background:#ef4444;
+padding:35px;
+border-radius:20px;
+text-align:center;
+font-size:18px;
+}
+
+footer{
+padding:35px;
+text-align:center;
+opacity:.8;
+}
+
+@keyframes float{
+50%{
+transform:translateY(-20px);
+}
+}
+
+@keyframes fadeLeft{
+from{
+opacity:0;
+transform:translateX(-70px);
+}
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.right{
+font-size:130px;
+}
+
+.left h1{
+font-size:42px;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">💙 MindCare</div>
+
+<ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#mood">Mood Check</a></li>
+<li><a href="#chat">Support</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="left">
+
+<h1>
+You Are <span>Not Alone</span>
+</h1>
+
+<p>
+Mental health matters. Learn coping strategies,
+practice self-care, and find supportive resources.
+Seeking help is a sign of strength.
+</p>
+
+<button class="btn"
+onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
+Explore
+</button>
+
+</div>
+
+<div class="right">
+🧠
+</div>
+
+</section>
+
+<section id="features">
+
+<h2 class="title">
+How MindCare Helps
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>💙 Emotional Support</h3>
+<p>Receive encouraging guidance and mental wellness information.</p>
+</div>
+
+<div class="card">
+<h3>🧘 Self-Care</h3>
+<p>Discover breathing exercises, mindfulness, sleep habits, and healthy routines.</p>
+</div>
+
+<div class="card">
+<h3>🤝 Reach Out</h3>
+<p>Encourages connecting with trusted friends, family, or mental health professionals.</p>
+</div>
+
+<div class="card">
+<h3>🌱 Daily Growth</h3>
+<p>Small positive habits can contribute to resilience and emotional well-being.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="mood">
+
+<h2 class="title">
+Mood Check-In
+</h2>
+
+<div class="mood-box">
+
+<h3>How are you feeling today?</h3>
+
+<div class="moods">
+
+<button onclick="mood('😊')">😊</button>
+<button onclick="mood('🙂')">🙂</button>
+<button onclick="mood('😔')">😔</button>
+<button onclick="mood('😭')">😭</button>
+
+</div>
+
+<div id="moodResult" class="result"></div>
+
+</div>
+
+</section>
+
+<section id="chat">
+
+<h2 class="title">
+Support Chat (Demo)
+</h2>
+
+<div class="chat">
+
+<div class="messages" id="messages">
+
+<div class="bot">
+Hello 💙 I'm here to offer supportive information and encouragement. How are you feeling today?
+</div>
+
+</div>
+
+<div class="chatinput">
+
+<input
+id="question"
+placeholder="Type your message...">
+
+<button onclick="reply()">
+Send
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="emergency">
+
+<h2>Need Immediate Help?</h2>
+
+<p style="margin-top:15px;">
+If you or someone else is in immediate danger or may act on thoughts of suicide,
+contact your local emergency services or a nearby crisis hotline right away.
+You don't have to face this alone.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 MindCare • Mental Health Awareness & Well-Being
+
+</footer>
+
+<script>
+
+function mood(value){
+
+let text="";
+
+if(value=="😊")
+text="That's wonderful. Keep taking time for activities that support your well-being.";
+
+if(value=="🙂")
+text="It's good to check in with yourself. A short walk or talking with someone you trust may help.";
+
+if(value=="😔")
+text="I'm sorry you're having a difficult day. Consider reaching out to someone you trust and taking small, gentle steps to care for yourself.";
+
+if(value=="😭")
+text="It sounds like you're going through something very difficult. You deserve support. If you're feeling overwhelmed, consider contacting a trusted person or a mental health professional today.";
+
+document.getElementById("moodResult").innerHTML=text;
+
+}
+
+function reply(){
+
+let input=document.getElementById("question");
+
+let text=input.value.trim();
+
+if(text=="") return;
+
+let messages=document.getElementById("messages");
+
+messages.innerHTML+=`
+<div class="user">${text}</div>
+`;
+
+let response="Thank you for sharing. Remember to be kind to yourself, stay connected with people you trust, and seek professional support if you need it.";
+
+let q=text.toLowerCase();
+
+if(q.includes("stress"))
+response="Stress is a common experience. Try taking short breaks, practicing deep breathing, and focusing on one task at a time.";
+
+else if(q.includes("anxiety"))
+response="Anxiety can feel overwhelming. Slow breathing, grounding techniques, and talking with someone supportive may help.";
+
+else if(q.includes("sleep"))
+response="A regular sleep schedule, limiting screen time before bed, and a calming routine can improve sleep quality.";
+
+else if(q.includes("sad"))
+response="I'm sorry you're feeling sad. Sharing your feelings with someone you trust can make a difference, and professional support is available if these feelings persist.";
+
+else if(q.includes("happy"))
+response="I'm glad to hear that. Celebrating positive moments and staying connected with supportive people can help maintain well-being.";
+
+setTimeout(()=>{
+
+messages.innerHTML+=`
+<div class="bot">${response}</div>
+`;
+
+messages.scrollTop=messages.scrollHeight;
+
+},500);
+
+input.value="";
+
+}
+
+</script>
+
+<script>
+  window.wxOConfiguration = {
+    orchestrationID: "917181a7e83d41e7bca108d0b786865f_f91a19a0-85a7-427b-9c98-a2bc3e56a87c",
+    hostURL: "https://us-south.watson-orchestrate.cloud.ibm.com",
+    rootElementID: "root",
+    deploymentPlatform: "ibmcloud",
+    crn: "crn:v1:bluemix:public:watsonx-orchestrate:us-south:a/917181a7e83d41e7bca108d0b786865f:f91a19a0-85a7-427b-9c98-a2bc3e56a87c::",
+    chatOptions: {
+        agentId: "852f716b-0bae-405f-afe8-eba3c811c379", 
+    }
+  };
+  setTimeout(function () {
+    const script = document.createElement('script');
+    script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
+    script.addEventListener('load', function () {
+        wxoLoader.init();
+    });
+    document.head.appendChild(script);
+  }, 0);                     
+</script>
+
+</body>
+</html>
